@@ -27,7 +27,7 @@ a:hover{
   background-color: #777;
 }
 
-#mainPhoto{
+video{
   background-color: #777;
   padding: 2%;
   display: flex;
@@ -36,9 +36,7 @@ a:hover{
   margin-left: 25%;
   margin-bottom: 3%;
 }
-img{
-  box-shadow: 5px 5px;
-}
+
 footer{
   background-color: #333;
   display:flex;
