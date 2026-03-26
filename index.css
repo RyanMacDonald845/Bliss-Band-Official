@@ -1,83 +1,210 @@
-body{
-  background-image: url("images/Background.JPG");
-  background-size: contain;
-  background-position: center top;
-  background-repeat: no-repeat;
-}
-h1{
-  font-size: 700%;
-  color: #fff;
-  margin-left: 11%;
-  margin-top: 3.5%;
-}
-#heading{
+:root {
+    --primary: #ffffff;
+    --accent: #ff0000; /* Subtle rock accent color */
+    --bg: #050505;
+    --glass: rgba(255, 255, 255, 0.05);
 }
 
-.gradient{
-  background-image: linear-gradient(0deg, #000, transparent);
-  background-color: rgba(0, 0, 0, 0);
-  height: 200px;
-  width: 101.45%;
-  margin-left: -1%;
-  margin-top: 19%;
-}
-#main{
-  background-color: rgba(0,0,0,1);
-  padding-top: 15%;
-  margin-left: -1%;
-  margin-right: -0.45%;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* Makes the Socials link slide smoothly */
 }
 
-nav{
-  position: fixed;        
-  width: 45%;
-  margin-left: 54%;
-  top: 8%;
-  display: flex;
-  justify-content: space-evenly;
-  background-color: rgba(153, 153, 153, 0.3);
-  padding: 1%;
-  border-radius: 33px 5px 0px 33px;
-  backdrop-filter: blur(5px); 
+body {
+    background-color: var(--bg);
+    color: var(--primary);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
 }
 
-a{
-  text-decoration: none;
-  font-size: 1.8rem;
-  color: #fff;
-  padding: 1% 3% 1% 3%;
-  border-radius: 24px;
-}
-a:hover{
-  color: #999;
-  text-decoration: underline;
-}
-#videoPlayer{
-  display: flex;
-  justify-content: space-around;
-  padding: 0rem 7rem 0rem 7rem;
-  gap: 6rem;
-  margin-bottom: 3%;
-}
-#videoPlayer #info h3{
-  color: #fff;
-  font-size: 3rem;
-} 
-#videoPlayer #info p{
-  font-size: 2rem;
-  color: #fff;
-}
-video{
-  width: 50%;
+/* --- NAVIGATION --- */
+nav {
+    position: fixed;
+    top: 20px;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
 }
 
-footer{
-  background-color: #000;
-  display:flex;
-  justify-content: center;
-  margin-bottom: -1%;
+.nav-blur {
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 100px;
+    padding: 10px 30px;
 }
-footer p{
-  color: #fff;
-  font-size: 1.2rem;
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 100vh;
+    background: url("images/Background.JPG") no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-inner {
+    text-align: center;
+    z-index: 5;
+}
+
+h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(5rem, 20vw, 15rem);
+    line-height: 0.9;
+    letter-spacing: -5px;
+}
+
+.tagline {
+    letter-spacing: 10px;
+    font-weight: 300;
+    opacity: 0.7;
+}
+
+.vignette {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle, transparent 40%, var(--bg) 95%);
+}
+
+/* --- BIO SECTION --- */
+.bio-grid {
+    padding: 100px 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.bio-text h2 {
+    font-family: 'Bebas Neue';
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.bio-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
+
+.video-wrapper {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+}
+
+video { width: 100%; display: block; }
+
+.btn-primary {
+    display: inline-block;
+    padding: 15px 40px;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.4s;
+}
+
+.btn-primary:hover {
+    background: white;
+    color: black;
+}
+
+/* --- FOOTER / SOCIALS --- */
+footer {
+    padding: 100px 5%;
+    background: #000;
+    text-align: center;
+}
+
+footer h3 {
+    font-family: 'Bebas Neue';
+    font-size: 3rem;
+    margin-bottom: 40px;
+    letter-spacing: 5px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+}
+
+/* Add this to your existing index.css or replace the social-btn section */
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Space between icon and text */
+    padding: 15px 25px;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.social-btn i {
+    font-size: 1.2rem; /* Makes the icons slightly larger than the text */
+}
+
+.social-btn:hover {
+    border-color: #fff;
+    background: #fff;
+    color: #000;
+    transform: translateY(-3px);
+}
+
+/* Bio Text adjustment for a more "Natural" feel */
+.bio-text p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+    color: #ddd; /* Off-white feels less "default" */
+}
+
+.copyright {
+    opacity: 0.3;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+}
+
+/* --- MOBILE VIEW --- */
+@media (max-width: 900px) {
+    .bio-grid { grid-template-columns: 1fr; text-align: center; }
+    .nav-links { gap: 15px; }
+    .nav-links a { font-size: 0.65rem; }
+    h1 { letter-spacing: -2px; }
 }
