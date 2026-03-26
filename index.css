@@ -208,3 +208,23 @@ footer h3 {
     .nav-links a { font-size: 0.65rem; }
     h1 { letter-spacing: -2px; }
 }
+
+h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(5rem, 20vw, 15rem);
+    line-height: 0.9;
+    /* Changed from -5px to 15px to "unglue" the letters */
+    letter-spacing: 15px; 
+    text-transform: uppercase;
+    /* This ensures the last letter's spacing doesn't push the title off-center */
+    margin-right: -15px; 
+}
+
+/* Also update the tagline to match the airy feel */
+.tagline {
+    letter-spacing: 12px;
+    font-weight: 300;
+    opacity: 0.6;
+    margin-top: 10px;
+}
+
