@@ -23,25 +23,7 @@ nav {
   justify-content: center;
 }
 
-.nav-blur {
-  background: rgba(10, 10, 10, 0.8);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 100px;
-  padding: 10px 30px;
-}
 
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.75rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin: 0 15px;
-  transition: 0.3s;
-}
 
 /* --- STORE HERO --- */
 .store-hero {
@@ -120,9 +102,38 @@ footer {
   opacity: 0.3;
 }
 
-/* Mobile */
+.nav-blur {
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 100px;
+  /* Match the new height */
+  padding: 18px 45px; 
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  /* Match the new size */
+  font-size: 0.95rem; 
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 0 15px;
+  transition: 0.3s;
+}
+
+/* Updated Store Mobile */
 @media (max-width: 768px) {
-  .nav-blur { width: 90%; padding: 10px 10px; }
-  .nav-links a { font-size: 0.6rem; margin: 0 8px; }
+  .nav-blur { 
+    width: 90%; 
+    padding: 12px 15px; 
+  }
+  .nav-links a { 
+    font-size: 0.75rem; 
+    margin: 0 8px; 
+    letter-spacing: 1px;
+  }
   .status-box { width: 85%; padding: 30px 20px; }
 }

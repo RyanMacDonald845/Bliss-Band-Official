@@ -29,13 +29,50 @@ nav {
     justify-content: center;
 }
 
+/* --- UPDATED NAVIGATION SIZE --- */
 .nav-blur {
     background: rgba(10, 10, 10, 0.7);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 100px;
-    padding: 10px 30px;
+    /* Increased vertical padding from 10px to 18px */
+    padding: 18px 45px; 
+    transition: all 0.3s ease;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px; /* Increased gap between links */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    /* Increased font size for better readability */
+    font-size: 0.95rem; 
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+/* --- UPDATED MOBILE VIEW --- */
+@media (max-width: 900px) {
+    .nav-blur { 
+        padding: 12px 25px; /* Scales down slightly for mobile but stays "chunkier" */
+        width: 95%;
+        justify-content: center;
+    }
+    .nav-links { 
+        gap: 15px; 
+    }
+    .nav-links a { 
+        font-size: 0.75rem; /* Still larger than the previous 0.65rem */
+        letter-spacing: 1.5px;
+    }
+    .bio-grid { grid-template-columns: 1fr; text-align: center; }
+    h1 { letter-spacing: -2px; }
 }
 
 .nav-links {
@@ -43,15 +80,6 @@ nav {
     gap: 25px;
 }
 
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    transition: 0.3s;
-}
 
 .nav-links a:hover { color: var(--accent); }
 
@@ -73,9 +101,15 @@ nav {
 
 h1 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(5rem, 20vw, 15rem);
+    /* Reduced max size from 15rem to 10rem to match the "smaller" look */
+    font-size: clamp(4rem, 10vw, 5rem); 
     line-height: 0.9;
-    letter-spacing: -5px;
+    /* Kept the 15px spacing but reduced for a tighter mobile view */
+    letter-spacing: 12px; 
+    text-transform: uppercase;
+    /* Offset the margin to keep it perfectly centered */
+    margin-right: -12px; 
+    transition: all 0.3s ease;
 }
 
 .tagline {
