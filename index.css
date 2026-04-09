@@ -104,6 +104,30 @@ nav {
     z-index: 5;
 }
 
+/* --- 1080px specific adjustments --- */
+@media (max-width: 98rem) {
+    /* Smaller nav */
+    nav {
+        top: 20px;
+    }
+
+    .nav-blur {
+        padding: 12px 40px;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+    }
+
+    /* Smaller & lower Get Tickets button */
+   #GetTickets {
+        /* Instead of top: 50%, just adjust the bottom value */
+        bottom: 15%; 
+        padding: 12px 40px;
+        font-size: 1rem;
+    }
+}
 
 
 .tagline {
@@ -180,15 +204,21 @@ nav {
 
 #GetTickets {
     position: absolute;
-    background-color: black;
-    bottom: 250px; /* adjust this number to move it higher/lower */
-    padding: 15px 50px;
-    font-size: 1.1rem;
-    z-index: 10;
-    text-align: center;
+    /* Use 'left' and 'transform' to perfectly center horizontally */
+    left: 50%;
+    transform: translateX(-50%); 
+    
+    /* Position from the bottom */
+    bottom: 20%; /* Using % is better for different screen heights */
+    
+    /* Visuals */
     background: rgba(10, 10, 10, 0.75);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
+    padding: 15px 50px;
+    font-size: 1.1rem;
+    z-index: 10;
+    white-space: nowrap; /* Prevents text from wrapping/cutting */
 }
 
 #GetTickets:hover {
