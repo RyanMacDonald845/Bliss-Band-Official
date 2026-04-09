@@ -90,7 +90,8 @@ nav {
 /* --- HERO SECTION --- */
 .hero {
     height: 100vh;
-    background: url("images/Background.JPG") no-repeat center center;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,1) 100%), 
+                url("images/Final_Hero_Section_FB.png") no-repeat center center;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -103,18 +104,7 @@ nav {
     z-index: 5;
 }
 
-h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    /* Reduced max size from 15rem to 10rem to match the "smaller" look */
-    font-size: clamp(4rem, 10vw, 5rem); 
-    line-height: 0.9;
-    /* Kept the 15px spacing but reduced for a tighter mobile view */
-    letter-spacing: 12px; 
-    text-transform: uppercase;
-    /* Offset the margin to keep it perfectly centered */
-    margin-right: -12px; 
-    transition: all 0.3s ease;
-}
+
 
 .tagline {
     letter-spacing: 10px;
@@ -154,10 +144,99 @@ h1 {
     width: 100%;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    border: 1px solid rgba(255,255,255,0.08);
+    position: relative;
 }
 
-video { width: 100%; display: block; }
+/* thumbnail image */
+.video-thumbnail {
+    display: block;
+    position: relative;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+/* zoom on hover */
+.video-thumbnail:hover img {
+    transform: scale(1.05);
+}
+
+/* dark overlay */
+.video-thumbnail::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.video-thumbnail:hover::after {
+    background: rgba(0,0,0,0.2);
+}
+
+#GetTickets {
+    position: absolute;
+    background-color: black;
+    bottom: 250px; /* adjust this number to move it higher/lower */
+    padding: 15px 50px;
+    font-size: 1.1rem;
+    z-index: 10;
+    text-align: center;
+    background: rgba(10, 10, 10, 0.75);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+#GetTickets:hover {
+    background: rgba(255, 255, 255, 0.75);
+}
+
+@media (max-width: 900px) {
+    #GetTickets {
+        bottom: 50px; /* a bit lower for mobile */
+        font-size: 0.95rem;
+        padding: 12px 35px;
+    }
+}
+
+/* play button */
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid rgba(255,255,255,0.6);
+    transition: 0.3s;
+}
+
+.play-button i {
+    color: white;
+    font-size: 28px;
+    margin-left: 3px; /* centers triangle visually */
+}
+
+/* hover effect */
+.video-thumbnail:hover .play-button {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: rgba(255, 0, 0, 0.8);
+    border-color: white;
+}
 
 .btn-primary {
     display: inline-block;
