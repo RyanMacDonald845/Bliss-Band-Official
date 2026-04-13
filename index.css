@@ -104,6 +104,14 @@ nav {
     z-index: 5;
 }
 
+
+@media (max-width: 900px) {
+    .hero {
+        height: 70vh; /* smaller so it doesn’t zoom/crop too much */
+        background-position: center top; /* shows top of image instead */
+    }
+}
+
 /* --- 1080px specific adjustments --- */
 @media (max-width: 98rem) {
     /* Smaller nav */
@@ -227,10 +235,11 @@ nav {
 
 @media (max-width: 900px) {
     #GetTickets {
-        bottom: 50px; /* a bit lower for mobile */
+        bottom: 0px; /* a bit lower for mobile */
         font-size: 0.95rem;
         padding: 12px 35px;
     }
+    
 }
 
 /* play button */
